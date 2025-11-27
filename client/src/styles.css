@@ -180,3 +180,80 @@ button.danger {
 .docs-link:hover {
   text-decoration: underline;
 }
+
+/* ===== MOBILE RESPONSIVE (max-width: 600px) ===== */
+@media (max-width: 600px) {
+
+  /* Header shrinks */
+  .header {
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  .header h1 {
+    font-size: 1.1rem;
+  }
+
+  .header .hint {
+    display: none;
+    /* Hide hint on phone (saves space) */
+  }
+
+  /* Search box becomes larger */
+  .search-box input {
+    width: 140px;
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+
+  .search-results {
+    max-height: 150px;
+  }
+
+  /* Docs link size */
+  .docs-link {
+    margin-left: 6px;
+    font-size: 0.9rem;
+  }
+
+  /* Panel becomes mobile drawer */
+  .panel {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 65%;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    animation: slideUp .3s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Footer smaller */
+  .footer {
+    font-size: 0.75rem;
+    padding: 4px 0;
+  }
+
+  /* Buttons easier for touch */
+  button,
+  button.ghost {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust canvas spacing */
+  canvas {
+    top: 50px;
+  }
+}

@@ -144,3 +144,93 @@
     flex-direction: column;
     gap: 10px;
 }
+
+/* ===== MOBILE RESPONSIVE (max-width: 600px) ===== */
+@media (max-width: 600px) {
+
+    /* Panel becomes bottom drawer */
+    .panel {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: 0 !important;
+        height: 70%;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        animation: slideUp 0.3s ease;
+    }
+
+    /* Animation */
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Close button reposition */
+    .cp-close {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    /* Flag size */
+    .cp-flag {
+        width: 180px;
+        height: 100px;
+    }
+
+    /* Title */
+    .cp-name {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
+    .cp-code {
+        font-size: 14px;
+    }
+
+    /* Stats becomes 1 column */
+    .cp-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .cp-stat-card {
+        padding: 10px;
+    }
+
+    /* Textarea */
+    .fact-form textarea {
+        min-height: 70px;
+        font-size: 14px;
+    }
+
+    /* AI Section spacing */
+    .cp-ai-section {
+        padding: 10px;
+    }
+
+    .cp-ai-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .cp-ai-fact-box {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cp-fact-form,
+    .cp-facts-list {
+        padding: 10px;
+        font-size: 13px;
+    }
+}

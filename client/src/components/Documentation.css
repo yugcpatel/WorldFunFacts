@@ -70,3 +70,59 @@ pre {
 .docs-bottom-btn:hover {
     background: var(--accent2);
 }
+
+/* ===== MOBILE RESPONSIVE (max-width: 600px) ===== */
+@media (max-width: 600px) {
+
+    /* Container full width */
+    .docs-container {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 16px;
+    }
+
+    /* Title smaller */
+    .docs-container h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    /* Section spacing */
+    .docs-container section {
+        padding: 14px 16px;
+        margin-bottom: 28px;
+    }
+
+    /* Subtitle */
+    .docs-container h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Code block */
+    pre {
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        /* Makes code wrap on small screens */
+    }
+
+    /* Top close button */
+    .docs-close-btn {
+        top: 10px;
+        right: 12px;
+        padding: 5px 8px;
+        font-size: 1rem;
+    }
+
+    /* Bottom button */
+    .docs-bottom-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+}
