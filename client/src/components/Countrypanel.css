@@ -1,0 +1,236 @@
+/* ===== CLOSE ===== */
+.cp-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #00bfff;
+    color: #000;
+    border: none;
+    font-size: 22px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cp-close:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+/* ===== FLAG ===== */
+.cp-flag {
+    display: block;
+    margin: 0 auto;
+    width: 220px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== TITLE ===== */
+.cp-name {
+    text-align: center;
+    font-size: 26px;
+    margin: 15px 0;
+}
+
+.cp-code {
+    color: #00bfff;
+    font-size: 16px;
+}
+
+/* ===== TEXTAREA ===== */
+.fact-form textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    background: #0d1330;
+    color: var(--text);
+    border: 1px solid #2a3566;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* ===== STATS ===== */
+.cp-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.cp-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cp-stat-label {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.cp-stat-value {
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+/* ===== BLOCK ===== */
+.cp-fact-form,
+.cp-facts-list {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* ===== STATUS ===== */
+.cp-loading,
+.cp-error {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+.cp-error {
+    color: #ff4d4d;
+}
+
+/* ===== AI ===== */
+.cp-ai-section {
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px solid #2a3566;
+    border-radius: 12px;
+    background: #0d1330;
+}
+
+.cp-ai-btn {
+    margin-top: 8px;
+    width: 100%;
+    padding: 10px;
+    background: var(--accent2);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== AI FACT BOX ===== */
+.cp-ai-fact-box {
+    margin-top: 8px;
+    padding: 10px;
+    background: #121a3d;
+    border-radius: 8px;
+    border: 1px solid #2a3566;
+}
+
+.cp-ai-fact-box button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* ===== AI LIST ===== */
+.cp-ai-fact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===== MOBILE RESPONSIVE (max-width: 600px) ===== */
+@media (max-width: 600px) {
+
+    /* Panel becomes bottom drawer */
+    .panel {
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: 0 !important;
+        height: 70%;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        animation: slideUp 0.3s ease;
+    }
+
+    /* Animation */
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Close button reposition */
+    .cp-close {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    /* Flag size */
+    .cp-flag {
+        width: 180px;
+        height: 100px;
+    }
+
+    /* Title */
+    .cp-name {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
+    .cp-code {
+        font-size: 14px;
+    }
+
+    /* Stats becomes 1 column */
+    .cp-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .cp-stat-card {
+        padding: 10px;
+    }
+
+    /* Textarea */
+    .fact-form textarea {
+        min-height: 70px;
+        font-size: 14px;
+    }
+
+    /* AI Section spacing */
+    .cp-ai-section {
+        padding: 10px;
+    }
+
+    .cp-ai-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .cp-ai-fact-box {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cp-fact-form,
+    .cp-facts-list {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
