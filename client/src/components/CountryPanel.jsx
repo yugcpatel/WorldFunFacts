@@ -4,7 +4,7 @@ import FactsList from './FactsList.jsx'
 import FactForm from './FactForm.jsx'
 import './CountryPanel.css'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000'
+const API_BASE = 'http://localhost:4000' || 'https://worldfunfacts.onrender.com'
 
 /**
  * CountryPanel Component
