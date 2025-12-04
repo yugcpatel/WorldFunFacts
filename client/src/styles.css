@@ -181,79 +181,104 @@ button.danger {
   text-decoration: underline;
 }
 
-/* ===== MOBILE RESPONSIVE (max-width: 600px) ===== */
 @media (max-width: 600px) {
 
-  /* Header shrinks */
+  /* Header becomes 2 rows, but docs icon moves to row 1 */
   .header {
-    gap: 12px;
-    padding: 10px 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    /* title | button | i-icon */
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      "title button docs"
+      "search search search";
+
+    column-gap: 5px;
+    row-gap: 15px;
+
+    padding: 12px;
+    background: rgba(11, 16, 32, 0.95);
+    backdrop-filter: blur(6px);
+    z-index: 10;
   }
 
+  /* === LINE 1 === */
   .header h1 {
-    font-size: 1.1rem;
+    grid-area: title;
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--accent);
   }
 
-  .header .hint {
-    display: none;
-    /* Hide hint on phone (saves space) */
+  .header button {
+    grid-area: button;
+    justify-self: end;
+    align-self: center;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 8px;
   }
 
-  /* Search box becomes larger */
-  .search-box input {
-    width: 140px;
-    font-size: 0.95rem;
-    padding: 6px 8px;
-  }
-
-  .search-results {
-    max-height: 150px;
-  }
-
-  /* Docs link size */
+  /* Small glowing "i" icon now in top-right */
   .docs-link {
-    margin-left: 6px;
-    font-size: 0.9rem;
+    grid-area: docs;
+    justify-self: end;
+    align-self: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    background: rgba(107, 194, 255, 0.15);
+    color: var(--accent);
+
+    box-shadow: 0 0 6px rgba(107, 194, 255, 0.5);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0;
+    /* hide original text */
   }
 
-  /* Panel becomes mobile drawer */
-  .panel {
-    top: auto !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    height: 65%;
-    border-radius: 20px 20px 0 0;
-    padding: 20px;
-    animation: slideUp .3s ease;
+  .docs-link::before {
+    content: "i";
+    font-size: 18px;
+    font-weight: 600;
   }
 
-  @keyframes slideUp {
-    from {
-      transform: translateY(100%);
-    }
-
-    to {
-      transform: translateY(0);
-    }
+  /* === LINE 2 === */
+  .header .search-box {
+    grid-area: search;
+    position: relative;
   }
 
-  /* Footer smaller */
-  .footer {
-    font-size: 0.75rem;
-    padding: 4px 0;
+  .header .search-box input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(107, 194, 255, 0.6);
+    color: var(--text);
+    font-size: 1rem;
+    box-shadow: 0 0 8px rgba(107, 194, 255, 0.5);
   }
 
-  /* Buttons easier for touch */
-  button,
-  button.ghost {
-    padding: 8px 10px;
-    font-size: 0.9rem;
+  /* Hide the empty spacer div */
+  .header>div[style*="flex: 1"] {
+    display: none !important;
   }
 
-  /* Adjust canvas spacing */
+  /* Move canvas down */
   canvas {
-    top: 50px;
+    top: 110px !important;
   }
 }
