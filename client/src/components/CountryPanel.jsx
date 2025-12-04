@@ -4,10 +4,10 @@ import FactsList from './FactsList.jsx'
 import FactForm from './FactForm.jsx'
 import './CountryPanel.css'
 
-const API_BASE = 'http://localhost:4000' || 'https://worldfunfacts.onrender.com'
+const API_BASE = 'https://worldfunfacts.onrender.com' || 'http://localhost:4000'
 
 /**
- * CountryPanel Component
+ CountryPanel Component
  * ---------------------------------------------------------------
  * Displays detailed information about the currently selected country.
  * Supports:
